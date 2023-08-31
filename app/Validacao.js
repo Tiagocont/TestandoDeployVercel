@@ -7,6 +7,12 @@ function VerificaSeNumeroEValido(chute){
         return RetornarResultado(chute, stringDeRetorno);
     }
 
+    else if(chute === "mudar tema"){
+        stringDeRetorno = '<div>Mudança de tema realizada com sucesso</div>'
+        document.body.classList.toggle("mudar-tema");
+        return RetornarResultado(chute, stringDeRetorno);
+    }
+
     else if(VerificaSeTipoENumero(numero)){
         stringDeRetorno = `Valor Inválido!`;
         return RetornarResultado(chute, stringDeRetorno);
