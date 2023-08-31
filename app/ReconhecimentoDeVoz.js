@@ -9,15 +9,10 @@ recognition.addEventListener('result', onSpeak) //ao começar quero pegar o que 
 
 function onSpeak(e){
     chute = e.results[0][0].transcript;
-    ExibeValornaTela(chute);
+    console.log(chute)
     VerificaSeNumeroEValido(chute)
 };
 
-function ExibeValornaTela(chute){
-    elementoChute.innerHTML = `<div>Você disse:</div>
-    <span class="box">${chute}</span>
-    <div><i class="fa-solid fa-up-long"></i>  O número secreto é maior <i class="fa-solid fa-up-long"></i> </div>`
-}
 
 recognition.addEventListener('end', ()=> recognition.start());
 

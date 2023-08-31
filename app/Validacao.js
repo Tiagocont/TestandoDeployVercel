@@ -1,3 +1,5 @@
+const numerosExtensos = new Map([['um', 1], ['dois', 2], ['três', 3],  ['quatro', 4],['cinco', 5],['seis', 6],['sete', 7],['oito', 8],['nove', 9],['dez', 10]]);
+
 function VerificaSeNumeroEValido(chute){
     const numero = +chute;
     let stringDeRetorno;
@@ -13,18 +15,24 @@ function VerificaSeNumeroEValido(chute){
         return RetornarResultado(chute, stringDeRetorno);
     }
 
+    else if(ConverterExtensosParaNumero(chute)){
+        return RetornarResultado(ConverterExtensosParaNumero(chute), "stringDeRetorno")
+    }
+
     else if(VerificaSeTipoENumero(numero)){
         stringDeRetorno = `Valor Inválido!`;
         return RetornarResultado(chute, stringDeRetorno);
     }
 
     else if(NumeroMaiorOuMenorQueValorPermitido(numero)){
-        return elementoChute.innerHTML += `<div class="retorno">Diga um número entre ${menorValor} e ${maiorValor}</div>`;
+        stringDeRetorno = `<div class="retorno">Diga um número entre ${menorValor} e ${maiorValor}</div>`;
+        return RetornarResultado(chute, stringDeRetorno)
     }
 
     else{
         return ResultadoDoChuteValido(numero);
     }
+
 }
 
 function ResultadoDoChuteValido(chute) {
@@ -35,7 +43,7 @@ function ResultadoDoChuteValido(chute) {
     }
 
     if(chute === numeroSorteado){
-        document.body.innerHTML = `
+        return document.body.innerHTML = `
         <div>
             <h2>Você acertou!</h2><br>
             <h3>O número secreto era ${numeroSorteado}</h3>
@@ -65,8 +73,15 @@ function NumeroMaiorOuMenorQueValorPermitido(numero){
     return numero > maiorValor || numero < menorValor
 }
 
+function ConverterExtensosParaNumero(numero){
+    if(numerosExtensos.has(numero)){
+        return numerosExtensos.get(numero);
+    }
+}
+
 document.body.addEventListener('click', e=>{
     if(e.target.id == 'jogar-novamente'){
         window.location.reload();
     }
 })
+
