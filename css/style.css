@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+
+
+/*adicione a versão dark ao projeto, com azul escuro e preto*/
+:root{
+    --font-family: 'Bakbak One', cursive;
+    --primary-color: #b8e4e7;
+    --second-color: #51a4e0; 
+}
+
+body{
+    background-color: var(--second-color);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+h1{
+    font-size: 4em;
+}
+
+h2{
+    font-size: 3em;
+    margin-bottom: -25px
+}
+
+h3{
+    font-size: 2em;
+    margin-top: 15px;
+}
+
+.mensagem{
+    font-size: 1.5em;
+    margin-top: 40px;
+}
+
+.box{
+    border: 2px solid var(--primary-color);
+    border-radius: 30%;
+    font-size: 3.5em;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
+
+.retorno{
+    color: #ffff;
+}
+
+.btn{
+    color: var(--second-color);
+    font-family: var(--font-family);
+    font-size: 1.03em;
+    padding: 8px 15px;
+    border: 0;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+    margin-top: 20px;
+}
