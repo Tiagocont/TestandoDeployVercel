@@ -3,6 +3,7 @@ const numerosExtensos = new Map([['um', 1], ['dois', 2], ['três', 3],  ['quatro
 function VerificaSeNumeroEValido(chute){
     const numero = +chute;
     let stringDeRetorno;
+    const validacao = ConverterExtensosParaNumero(chute);
 
     if(chute === "game over"){
         stringDeRetorno = '<div>Fim de linha!!</div><button id="jogar-novamente" class="btn">Jogar novamente</button>';
@@ -15,8 +16,8 @@ function VerificaSeNumeroEValido(chute){
         return RetornarResultado(chute, stringDeRetorno);
     }
 
-    else if(ConverterExtensosParaNumero(chute)){
-        return RetornarResultado(ConverterExtensosParaNumero(chute), "stringDeRetorno")
+    else if(validacao){
+        return ResultadoDoChuteValido(validacao);
     }
 
     else if(VerificaSeTipoENumero(numero)){
@@ -32,7 +33,6 @@ function VerificaSeNumeroEValido(chute){
     else{
         return ResultadoDoChuteValido(numero);
     }
-
 }
 
 function ResultadoDoChuteValido(chute) {

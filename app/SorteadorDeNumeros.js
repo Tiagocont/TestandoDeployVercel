@@ -13,4 +13,3 @@ const sorteador = ()=>{
 }
 
 const numeroSorteado = sorteador()
-console.log('Número sorteado:', numeroSorteado);
